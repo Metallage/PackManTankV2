@@ -16,18 +16,22 @@ using System.Windows.Shapes;
 namespace PackManTankV2
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для UserControl1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GameFieldControl : UserControl
     {
-        public MainWindow()
+        public GameFieldControl()
         {
             InitializeComponent();
         }
 
-        private void UserControl1_Loaded(object sender, RoutedEventArgs e)
+        private void SetSize(int xSize, int ySize)
         {
-
+            int i;
+            for (i = 0; i<xSize; i++)
+                BattleField.ColumnDefinitions.Add(new ColumnDefinition());
+            for (i = 0; i<ySize; i++)
+                BattleField.RowDefinitions.Add(new RowDefinition());
         }
     }
 }

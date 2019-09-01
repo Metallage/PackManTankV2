@@ -16,16 +16,22 @@ namespace PackManTankV2.Model
 
     public class GameCore
     {
-        public GameMap currentMap = null;
-        
 
-        public GameMap CurentMap
-        {
-            get
-            {
-                return currentMap;
-            }
-        }
+
+        public delegate void GameStartedHandler(bool startGame);
+
+        public delegate void GameUpdateHandler(GameMap mymap);
+
+        public delegate void GameFinishHandler(bool win);
+
+        public event GameStartedHandler GameStarted;
+
+        public event GameUpdateHandler GameUpdate;
+
+        public event GameFinishHandler GameFinished;
+
+
+        public GameMap CurentMap { get; }
 
     }
 }
