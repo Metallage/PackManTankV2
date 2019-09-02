@@ -16,6 +16,8 @@ namespace PackManTankV2.Model
 
         public override int Width { get; }
 
+        public Hero()
+        { }
         public Hero(int coordX, int coordY, int height, int width)
         {
             CoordX = coordX;
