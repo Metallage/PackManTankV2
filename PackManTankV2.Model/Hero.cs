@@ -8,6 +8,11 @@ namespace PackManTankV2.Model
 {
     public class Hero: GameObject
     {
+
+        public event GameObjectStateHandler HeroSpawned;
+
+        public Directions Direction { get; set; }
+
         public override int CoordX { get; set; }
 
         public override int CoordY { get; set; }
@@ -24,7 +29,10 @@ namespace PackManTankV2.Model
             CoordY = coordY;
             Height = height;
             Width = width;
+            Direction = Directions.North;
         }
+
+
 
     }
 }

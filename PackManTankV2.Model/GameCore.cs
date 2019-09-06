@@ -14,6 +14,9 @@ namespace PackManTankV2.Model
         West = 4
     }
 
+    public delegate void GameObjectStateHandler(object sender, EventArgs e);
+
+
     public class GameCore
     {
 
@@ -32,6 +35,24 @@ namespace PackManTankV2.Model
 
 
         public GameMap CurentMap { get; }
+
+        public Hero MyHero { get; set;}
+
+        private bool? isWin = null;
+        private bool? gameRunning = null;
+
+
+        public void StartGame()
+        {
+            gameRunning = true;
+        }
+
+
+        private void SpawnHero(int cX, int cY, Directions direction, GameObjectStateHandler heroSpawn)
+        {
+            Hero newHero = new Hero(cX, cY, 10, 10);
+            newHero.HeroSpawned += heroSpawn;
+        }
 
     }
 }

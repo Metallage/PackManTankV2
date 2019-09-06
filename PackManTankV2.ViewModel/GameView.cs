@@ -8,15 +8,27 @@ using PackManTankV2.Model;
 
 namespace PackManTankV2.ViewModel
 {
+
+    public delegate void UpdateEventHandler(object sender, GameUpdateEventArgs e);
     public class GameView
     {
         private GameCore myGame;
 
         public ObservableCollection<GameObject> GameObjects { get; } = new ObservableCollection<GameObject>();
 
-        public delegate void UpdateEventHandler(object sender, GameUpdateEventArgs e);
+
 
         public event UpdateEventHandler OnUpdate;
+
+        public GameView()
+        {
+            myGame = new GameCore();
+        }
+
+        private void RunGame()
+        {
+            
+        }
 
     }
 }

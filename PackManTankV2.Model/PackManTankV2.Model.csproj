@@ -44,6 +44,7 @@
     <Compile Include="GameCore.cs" />
     <Compile Include="GameMap.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="GameObjectEventArgs.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
